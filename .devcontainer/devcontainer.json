@@ -1,0 +1,22 @@
+{
+  "name": "flutter_3.13.6-stable_docker",
+  "image": "lincolnarrais/flutter_docker:3.16.6",
+  "remoteUser": "developer",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dart-code.flutter",
+        "hzgood.dart-data-class-generator",
+        "Flutterando.flutter-mobx"
+      ],
+      "settings": {
+        "terminal.integrated.shell.linux": null
+      }
+    }
+  },
+  // on windows or macos, remove the next line:
+  "mounts": ["source=/dev/bus/usb,target=/dev/bus/usb,type=bind"], // linux only
+  "runArgs": ["--privileged"],
+  "workspaceMount": "source=${localWorkspaceFolder}/workspace,target=/home/developer/workspace,type=bind,consistency=delegated",
+  "workspaceFolder": "/home/developer/workspace"
+}
